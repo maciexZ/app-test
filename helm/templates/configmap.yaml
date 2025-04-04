@@ -1,7 +1,6 @@
-apiVersion: vi
-kind: ConfigMap
-namespace: test-cs3
-metadata:
-  name: test-configmap
-data:
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: test-configmap
+# data:
   # flux
