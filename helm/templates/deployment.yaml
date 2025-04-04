@@ -28,4 +28,4 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: test-configmap-dev
+            name: test-configmap-{{ .Values.env }}
