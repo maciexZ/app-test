@@ -17,12 +17,14 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          args: {{ .Values.args }}
+          command: ["bash"]
+          args: ["-c", "sleep 1000"]
+          
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: config-volume
               mountPath: /opt/app/configs
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
       volumes:
         - name: config-volume
           configMap:
