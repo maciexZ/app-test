@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-configmap
+  labels:
+    app: {{ include "test-app.name" . }}
+data:
+  # Initially empty, will be populated by Flux
